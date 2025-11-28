@@ -52,7 +52,7 @@ def load_user(user_id):
     return None
 
 def init_flag():
-    flag = os.environ.get('FLAG', 'CTF{sqlmap_common_tables_master}')
+    flag = os.environ.get('FLAG', 'CTF{EZ_FLAG_SQL_INJECT}')
     print("[*] Ожидание БД...")
     while True:
         try:
@@ -172,4 +172,5 @@ def logout():
 
 if __name__ == '__main__':
     init_flag()
+
     app.run(host='0.0.0.0', port=5000)
