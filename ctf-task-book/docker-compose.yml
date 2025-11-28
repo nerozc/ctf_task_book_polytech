@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=ctf_user
+      - DB_PASSWORD=ctf_secure_pass
+      - DB_NAME=void_archive
+      - FLAG=CTF{real_platform_flag_placeholder} 
+      - SECRET_KEY=super_secret_session_key
+
+  db:
+    image: mysql:5.7
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --skip-character-set-client-handshake
+    environment:
+      MYSQL_DATABASE: void_archive
+      MYSQL_USER: ctf_user
+      MYSQL_PASSWORD: ctf_secure_pass
+      MYSQL_ROOT_PASSWORD: root_super_secret
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always

@@ -1,0 +1,10 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12,10 L28,10 L32,14 L32,54 L16,54 C13,54 12,53 12,50 Z" fill="#2a2a35" stroke="#c5a059" stroke-width="2" />
+  <path d="M52,10 L36,10 L32,14 L32,54 L48,54 C51,54 52,53 52,50 Z" fill="#2a2a35" stroke="#c5a059" stroke-width="2" />
+  <line x1="32" y1="14" x2="32" y2="54" stroke="#c5a059" stroke-width="2" />
+  <!-- Строки текста -->
+  <line x1="16" y1="20" x2="28" y2="20" stroke="#666" stroke-width="1" />
+  <line x1="16" y1="26" x2="28" y2="26" stroke="#666" stroke-width="1" />
+  <line x1="36" y1="20" x2="48" y2="20" stroke="#666" stroke-width="1" />
+  <line x1="36" y1="26" x2="48" y2="26" stroke="#666" stroke-width="1" />
+</svg>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Архив Бездны</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <img src="{{ url_for('static', filename='images/bg-symbol.svg') }}" class="bg-symbol" alt="">
+    <img src="{{ url_for('static', filename='images/web.svg') }}" class="decoration deco-top-left" alt="">
+    <img src="{{ url_for('static', filename='images/web.svg') }}" class="decoration deco-top-right" alt="">
+
+    <nav class="navbar">
+        <div class="logo">АРХИВ БЕЗДНЫ</div>
+        <div class="menu">
+            {% if current_user.is_authenticated %}
+                <span style="margin-right:15px; color:#666;">{{ current_user.username }}</span>
+                <a href="{{ url_for('search') }}">Гримуар</a>
+                <a href="{{ url_for('logout') }}">Покинуть</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Вход</a>
+                <a href="{{ url_for('register') }}">Присягнуть</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for message in messages %}
+                        <div class="flash">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

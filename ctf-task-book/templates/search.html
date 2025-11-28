@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="search-interface">
+    <h1>Гримуар Поиска</h1>
+
+     <p style="color: #555; margin-bottom: 30px; font-style: italic;">"{{ lore_quote }}"</p>
+    
+    <form method="POST" class="search-form">
+        <input type="text" name="query" class="search-input" placeholder="Введите название манускрипта..." value="{{ last_query }}">
+        <button type="submit" class="btn-search">Искать</button>
+    </form>
+
+    <div class="status-message">
+        {{ msg }}
+    </div>
+
+    {% if results %}
+    <div class="results-grid">
+        {% for book in results %}
+        <div class="book-card">
+            <img src="{{ url_for('static', filename='images/book-icon.svg') }}" class="book-icon" alt="">
+            <h3>{{ book.title }}</h3>
+            <span class="author">Автор: {{ book.author }}</span>
+            <hr style="border: 0; border-top: 1px solid #333; margin: 10px 0;">
+            <p>{{ book.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

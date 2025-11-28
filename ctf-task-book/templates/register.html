@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-box">
+    <img src="{{ url_for('static', filename='images/ink.svg') }}" class="ink-spot" alt="">
+    
+    <h2>Присяга Архиву</h2>
+    <p style="font-size: 0.9em; color:#888;">Ваше имя будет вписано кровью.</p>
+    <form method="POST">
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Придумайте имя" required autocomplete="off">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Придумайте ключ" required>
+        </div>
+        <button type="submit" class="btn-submit">Вписать имя</button>
+    </form>
+    <div class="links">
+        <a href="{{ url_for('login') }}">Уже в списках? Войти</a>
+    </div>
+</div>
+{% endblock %}

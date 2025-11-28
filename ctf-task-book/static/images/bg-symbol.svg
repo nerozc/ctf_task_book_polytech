@@ -1,0 +1,28 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Градиент для легкого свечения -->
+    <radialGradient id="starGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#6c5ce7;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#6c5ce7;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Легкое фоновое свечение по центру -->
+  <circle cx="250" cy="250" r="150" fill="url(#starGlow)" />
+
+  <g fill="none" stroke="#8e7cc3" stroke-width="2" opacity="0.6">
+    <!-- Внешнее тонкое кольцо -->
+    <circle cx="250" cy="250" r="220" stroke-opacity="0.5" />
+    
+    <!-- Внутреннее кольцо -->
+    <circle cx="250" cy="250" r="180" stroke-dasharray="4, 8" stroke-opacity="0.3" />
+
+    <!-- Классическая Пятиконечная Звезда -->
+    <!-- Координаты рассчитаны для центра 250,250 -->
+    <polygon points="250,70 305,185 430,200 335,285 360,410 250,350 140,410 165,285 70,200 195,185" 
+             stroke-linejoin="round" />
+             
+    <!-- Маленькая точка в самом центре -->
+    <circle cx="250" cy="250" r="3" fill="#8e7cc3" stroke="none" />
+  </g>
+</svg>

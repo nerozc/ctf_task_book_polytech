@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-box">
+    <img src="{{ url_for('static', filename='images/ink.svg') }}" class="ink-spot" alt="">
+    
+    <h2>Врата Знаний</h2>
+    <p style="font-size: 0.9em; color:#888;">Представьтесь, чтобы получить доступ.</p>
+    <form method="POST">
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Имя Искателя" required autocomplete="off">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Ключ доступа" required>
+        </div>
+        <button type="submit" class="btn-submit">Открыть Врата</button>
+    </form>
+    <div class="links">
+        <a href="{{ url_for('register') }}">Нет ключа? Принесите присягу (Регистрация)</a>
+    </div>
+</div>
+{% endblock %}
