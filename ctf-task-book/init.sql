@@ -14,13 +14,7 @@ CREATE TABLE IF NOT EXISTS books (
     is_forbidden BOOLEAN DEFAULT FALSE
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS admin (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    password VARCHAR(255) NOT NULL
-) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
 TRUNCATE TABLE books;
-
 INSERT INTO books (title, author, description, is_forbidden) VALUES
 ('Хроники Пустоты', 'Неизвестный', 'Детальные карты пустоты между звездами. Страницы холодные на ощупь.', 0),
 ('Некрономикон', 'Абдул Альхазред', 'Безумные тексты о Древних. Чтение вызывает мигрень и галлюцинации.', 1),
